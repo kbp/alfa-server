@@ -10,13 +10,10 @@
   <RecentFiles>
     <RecentFiles>
       <File id="9845AA73-CE23-43AC-9503-C51F1FF97712/d:Properties/f:AssemblyInfo.cs" caret="24" fromTop="0" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="484" fromTop="14" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:MxComPortConfig.cs" caret="716" fromTop="19" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:ReadData.cs" caret="132" fromTop="6" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Port.cs" caret="438" fromTop="13" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:MoxaSerialPort.cs" caret="9769" fromTop="31" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="2752" fromTop="73" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientService.cs" caret="0" fromTop="0" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:TestPort.cs" caret="680" fromTop="25" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:Configuration.cs" caret="1693" fromTop="15" />
       <File id="9845AA73-CE23-43AC-9503-C51F1FF97712/f:DoorTest.cs" caret="833" fromTop="26" />
@@ -32,20 +29,18 @@
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:ConsoleApplication.cs" caret="622" fromTop="24" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:AlfaService.cs" caret="1095" fromTop="28" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:FloorsCollection.cs" caret="1215" fromTop="24" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="5696" fromTop="12" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="334" fromTop="10" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientService.cs" caret="278" fromTop="11" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="2978" fromTop="20" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="20110" fromTop="10" />
     </RecentFiles>
     <RecentEdits>
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="2752" fromTop="22" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:Configuration.cs" caret="1691" fromTop="15" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="8647" fromTop="16" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="9418" fromTop="19" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="8817" fromTop="6" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="11188" fromTop="19" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="12685" fromTop="15" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="14366" fromTop="15" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="11148" fromTop="19" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="12645" fromTop="15" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="14326" fromTop="15" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="75" fromTop="2" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="689" fromTop="11" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="10119" fromTop="19" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="10079" fromTop="19" />
       <File id="9845AA73-CE23-43AC-9503-C51F1FF97712/f:DoorTest.cs" caret="833" fromTop="20" />
       <File id="9845AA73-CE23-43AC-9503-C51F1FF97712/f:FloorTest.cs" caret="141" fromTop="6" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="1594" fromTop="25" />
@@ -65,6 +60,11 @@
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="4771" fromTop="9" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="4343" fromTop="2" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="5648" fromTop="18" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="336" fromTop="10" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="8467" fromTop="16" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="2974" fromTop="26" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="2470" fromTop="17" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientService.cs" caret="813" fromTop="14" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -309,7 +309,7 @@
       <Item value="FloorsCollection" priority="2" />
       <Item value="query" priority="0" />
       <Item value="Rooms`0" priority="16" />
-      <Item value="room" priority="49" />
+      <Item value="room" priority="50" />
       <Item value="Room" priority="1" />
       <Item value="Floor`0" priority="7" />
       <Item value="Floor" priority="5" />
@@ -334,9 +334,9 @@
       <Item value="LightOn" priority="0" />
       <Item value="rooms" priority="6" />
       <Item value="roomsRow" priority="0" />
-      <Item value="long" priority="4" />
+      <Item value="long" priority="7" />
       <Item value="_roomId" priority="3" />
-      <Item value="roomId" priority="6" />
+      <Item value="roomId" priority="7" />
       <Item value="roomse" priority="0" />
       <Item value="currentRoom" priority="1" />
       <Item value="Stopwatch`0" priority="1" />
@@ -661,7 +661,7 @@
       <Item value="CountReadError" priority="2" />
       <Item value="Number" priority="0" />
       <Item value="IsProtected" priority="1" />
-      <Item value="RoomId" priority="1" />
+      <Item value="RoomId" priority="2" />
       <Item value="ControllerNumber" priority="1" />
       <Item value="CurrentRoom" priority="2" />
       <Item value="Key" priority="1" />

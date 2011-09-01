@@ -72,7 +72,7 @@ namespace AlfaServer.models
 
         public void AddRoom(byte controllerNumber, bool onLine, bool isProtected, long roomId)
         {
-            //Dictionary<byte, ReadingKey> keys = this.GetAllKeys(controllerNumber);
+            Dictionary<byte, ReadingKey> keys = this.GetAllKeys(controllerNumber);
             this.Add(new Room(controllerNumber, null, onLine, isProtected, roomId, 12));
             _logger.Info("room id = {0} add", roomId);
         }
