@@ -250,6 +250,9 @@ namespace AlfaServer.models
                     outputState
                 );
 
+                _logger.Info("isProtected = {0}", isProtected);
+                ClientServiceCallback.AlertGerkon(room.RoomId);
+
                 if (ClientServiceCallback != null && isProtected)
                 {
                     ClientServiceCallback.AlertGerkon(room.RoomId);
