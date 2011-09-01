@@ -166,7 +166,8 @@ namespace AlfaServer.models
                             {
                                 key.RemoveDate = currentDate;
                                 key.EndDate = null;
-                                UnsetKey(room.ControllerNumber, (byte)key.CellNumber);
+                                //todo закоменчено ибо кому то лень в базе ключам время отмены большое поставить. вернуть на место после тестов!!!!!!!
+//                                UnsetKey(room.ControllerNumber, (byte)key.CellNumber);
                             }
                         }
 
