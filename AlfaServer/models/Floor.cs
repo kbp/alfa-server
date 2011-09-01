@@ -251,7 +251,11 @@ namespace AlfaServer.models
                 );
 
                 _logger.Info("isProtected = {0}", isProtected);
-                ClientServiceCallback.AlertGerkon(room.RoomId);
+                if (ClientServiceCallback != null)
+                {
+                    ClientServiceCallback.AlertGerkon(room.RoomId);
+                }
+                
 
                 if (ClientServiceCallback != null && isProtected)
                 {
@@ -473,18 +477,14 @@ namespace AlfaServer.models
                 }
                 if (keys.Count > 0)
                 {
-                    _logger.Debug("попали плиат!");
                     foreach (KeyValuePair<byte, ReadingKey> keyValuePair in keys)
                     {
-                        _logger.Debug("foreach плиат!");
                         if (keyValuePair.Value.IsValid)
                         {
-                            _logger.Debug("cell {0} valid плиат!", keyValuePair.Key);
                             resultKeys[keyValuePair.Key] = keyValuePair.Value;
                         }
                         else
                         {
-                            _logger.Debug("cell {0} not valid плиат!", keyValuePair.Key);
                             readingSuccesfuly = false;
                         }
                     }
