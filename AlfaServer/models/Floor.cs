@@ -253,6 +253,7 @@ namespace AlfaServer.models
                 if (ClientServiceCallback != null && isProtected)
                 {
                     ClientServiceCallback.AlertGerkon(room.RoomId);
+                    _logger.Info("оповещение отправлено");
                 }
             }
         }
