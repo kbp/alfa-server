@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO.Ports;
 using System.Reflection;
 using System.Threading;
+using System.Linq;
+using AlfaServer.Entities;
 using NLog;
 
 namespace AlfaServer.models
@@ -28,10 +30,39 @@ namespace AlfaServer.models
             try
             {
                 _serialPort.Open();
+                AlfaEntities alfaEntities = new AlfaEntities();
+
+                var floors = from floorse in alfaEntities.Floors
+                             where floorse.ComPort == portName
+                             select floorse;
+
+                foreach (Floors floorse in floors)
+                {
+                    if (floorse.Online == false)
+                    {
+                        floorse.Online = true;
+                        alfaEntities.SaveChanges();
+                    }
+                }
             }
             catch (Exception exception)
             {
                 _logger.Error((exception.ToString()));
+
+                AlfaEntities alfaEntities = new AlfaEntities();
+
+                var floors = from floorse in alfaEntities.Floors
+                             where floorse.ComPort == portName
+                             select floorse;
+
+                foreach (Floors floorse in floors)
+                {
+                    if (floorse.Online == true)
+                    {
+                        floorse.Online = false;
+                        alfaEntities.SaveChanges();
+                    }
+                }
             }
 
             _serialPort.ReadTimeout = _readTimeout;
