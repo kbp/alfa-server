@@ -8,6 +8,15 @@ namespace AlfaServer.Services
         void AlertAboutControllerNotResponsible(string portName, byte controllerNumber);
 
         [OperationContract(IsOneWay = true)]
+        void AlertAboutControllerBeganRespond(string portName, byte controllerNumber);
+
+        [OperationContract(IsOneWay = true)]
+        void AlertComPortNotResponsible(string portName);
+
+        [OperationContract(IsOneWay = true)]
+        void AlertComPortBeganRespond(string portName);
+        
+        [OperationContract(IsOneWay = true)]
         void AlertGerkon(long roomId);
 
         [OperationContract(IsOneWay = true)]

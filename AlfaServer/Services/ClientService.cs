@@ -171,12 +171,13 @@ namespace AlfaServer.Services
 
         public bool AddFloor(string portName, string floorName)
         {
+            AlfaEntities alfaEntities = new AlfaEntities();
             _logger.Info("service: add floor to port {0} with name {1}", portName, floorName);
             Floors floor = new Floors();
             floor.ComPort = portName;
             floor.FloorName = floorName;
 
-            AlfaEntities alfaEntities = new AlfaEntities();
+            alfaEntities.Floors.AddObject(floor);
             alfaEntities.SaveChanges();
 
             return true;
@@ -212,6 +213,12 @@ namespace AlfaServer.Services
             }
 
             return false;
+        }
+
+        public bool SetDataBaseConnectionString(string name, string ip, string login, string password)
+        {
+
+            return true;
         }
     }
 }

@@ -838,4 +838,16 @@
       </violation>
     </violations>
   </sourcecode>
+  <project key="-2122464327">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="ModelAlfa.Designer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/30/2010 12:43:56</timestamp>
+      <milliseconds>0</milliseconds>
+    </settings>
+    <timestamp>08/28/2011 18:39:14</timestamp>
+    <milliseconds>51</milliseconds>
+    <violations />
+  </sourcecode>
 </stylecopresultscache>

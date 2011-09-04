@@ -44,5 +44,8 @@ namespace AlfaServer.Services
 
         [OperationContract]
         bool StartFloorPolling(string portName);
+
+        [OperationContract]
+        bool SetDataBaseConnectionString(string name, string ip, string login, string password);
     }
 }

@@ -155,6 +155,10 @@ namespace AlfaServer.models
                             countPoll = 0;
                         }
 
+                        if (room.CountReadError > _maxCountReadError)
+                        {
+                            ClientServiceCallback.AlertAboutControllerBeganRespond(_portName, _port.GetNumberLastRespondedController());
+                        }
                         room.CountReadError = 0;
                     }
                     if (checkTime)
@@ -216,6 +220,7 @@ namespace AlfaServer.models
                 {
                     if (ClientServiceCallback != null)
                     {
+                        // сохранить в базу что контроллер офлайн
                         ClientServiceCallback.AlertAboutControllerNotResponsible(_portName, _port.GetNumberLastRespondedController());
                     }
                 }
