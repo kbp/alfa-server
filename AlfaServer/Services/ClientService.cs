@@ -24,12 +24,14 @@ namespace AlfaServer.Services
                     floorsCollectionItem.SetKey(controllerNumber, number, key, name, endDate);
                     if (floorsCollectionItem.CheckingExistenceKey(controllerNumber, key))
                     {
+                        _logger.Info("service: set key cell {0}, controller {1}, port = {2} return TRUE", number, controllerNumber, portName);
                         return true;
                     }
-                    return false;
+                    break;
                 }
             }
 
+            _logger.Info("service: set key cell {0}, controller {1}, port = {2} return FALSE", number, controllerNumber, portName);
             return false;
         }
 
@@ -76,15 +78,17 @@ namespace AlfaServer.Services
             {
                 if (floorsCollectionItem.PortName == portName)
                 {
+
                     if (floorsCollectionItem.SetRoomToProtect(controllerNumber, isProtected))
                     {
+                        _logger.Info("service: set room to protect {0} controller {1}, port = {2} return TRUE", isProtected, controllerNumber, portName);
                         return true;
                     }
-
-                    return false;
+                    break;
                 }
             }
 
+            _logger.Info("service: set room to protect {0} controller {1}, port = {2} return false", isProtected, controllerNumber, portName);
             return false;
         }
 
@@ -100,13 +104,15 @@ namespace AlfaServer.Services
                 {
                     if (floorsCollectionItem.SetLight(controllerNumber, lightOn))
                     {
+                        _logger.Info("service: set light on {0} controller {1}, port = {2} return TRUE", lightOn, controllerNumber, portName);
                         return true;
                     }
 
-                    return false;
+                    break;
                 }
             }
 
+            _logger.Info("service: set light on {0} controller {1}, port = {2} return FALSE", lightOn, controllerNumber, portName);
             return false;
         }
 
@@ -136,7 +142,7 @@ namespace AlfaServer.Services
 
         public bool SetMasterKey(byte[] key)
         {
-            return true;
+            return false;
         }
 
         public bool AddRoomToFloor(string portName, int roomNumber, string roomClass, byte controllerNumber, 

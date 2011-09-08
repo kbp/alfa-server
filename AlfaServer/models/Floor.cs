@@ -72,7 +72,7 @@ namespace AlfaServer.models
 
         public void AddRoom(byte controllerNumber, bool onLine, bool isProtected, long roomId)
         {
-            Dictionary<byte, ReadingKey> keys = this.GetAllKeys(controllerNumber);
+//            Dictionary<byte, ReadingKey> keys = this.GetAllKeys(controllerNumber);
             this.Add(new Room(controllerNumber, null, onLine, isProtected, roomId, 12));
             _logger.Info("room id = {0} add", roomId);
         }
@@ -157,6 +157,8 @@ namespace AlfaServer.models
 
                         if (room.CountReadError > _maxCountReadError)
                         {
+                            room.CurrentRoom.OnLine = true;
+                            room.SaveChanges();
                             ClientServiceCallback.AlertAboutControllerBeganRespond(_portName, _port.GetNumberLastRespondedController());
                         }
                         room.CountReadError = 0;
@@ -171,7 +173,7 @@ namespace AlfaServer.models
                                 key.RemoveDate = currentDate;
                                 key.EndDate = null;
                                 //todo закоменчено ибо кому то лень в базе ключам время отмены большое поставить. вернуть на место после тестов!!!!!!!
-//                                UnsetKey(room.ControllerNumber, (byte)key.CellNumber);
+                                UnsetKey(room.ControllerNumber, (byte)key.CellNumber);
                             }
                         }
 
@@ -220,7 +222,8 @@ namespace AlfaServer.models
                 {
                     if (ClientServiceCallback != null)
                     {
-                        // сохранить в базу что контроллер офлайн
+                        room.CurrentRoom.OnLine = false;
+                        room.SaveChanges();
                         ClientServiceCallback.AlertAboutControllerNotResponsible(_portName, _port.GetNumberLastRespondedController());
                     }
                 }
@@ -282,6 +285,7 @@ namespace AlfaServer.models
 
         /// <summary>
         /// 1.1.    Назначить ключ.
+        /// Записывает ключ в указанный контроллер и в базу данных
         /// </summary>
         /// <param name="controllerNumber"> номер контролера </param>
         /// <param name="keyNumber"> порядковый номер ключа 0 - 11 </param>
@@ -319,15 +323,20 @@ namespace AlfaServer.models
 
             foreach (Rooms room in CurrentFloor.Rooms)
             {
-                Keys currentKey = (from key in room.Keys
-                                  where key.CellNumber == keyNumber
-                                  select key).First();
+                if (room.ConrollerId == controllerNumber)
+                {
+                    Keys currentKey = (from key in room.Keys
+                                       where key.CellNumber == keyNumber
+                                       select key).First();
 
-                currentKey.FIO = name;
-                currentKey.RemoveDate = endDate;
-                currentKey.keyCode = keyCode.ToString();
-                _alfaEntities.SaveChanges();
+                    currentKey.FIO = name;
+                    currentKey.RemoveDate = endDate;
+                    currentKey.keyCode = BitConverter.ToString(keyCode);
+                }
             }
+
+            _alfaEntities.SaveChanges();
+
             return true;
         }
 
@@ -374,6 +383,8 @@ namespace AlfaServer.models
                             key.keyCode = "";
                             key.GuestIdn = null;
                             _alfaEntities.SaveChanges();
+
+                            ClientServiceCallback.AlertUnsetKey(_portName, room.ControllerNumber);
                         }
 
                         break;

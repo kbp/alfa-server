@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using AlfaServer.Entities;
@@ -66,7 +65,7 @@ namespace AlfaServer.models
                     }
                 }
 
-                Thread.Sleep(3 * 600);
+                Thread.Sleep(Configuration.GetInstance().IntervalOpeningPorts);
             }
         }
 

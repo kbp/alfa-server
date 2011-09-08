@@ -23,9 +23,9 @@ namespace AlfaServer
         /// интервал между попытками открытиями порта
         /// </summary>
         /// <returns></returns>
-        public int GetIntervalOpeningPorts()
+        public int IntervalOpeningPorts
         {
-            return 1000000;
+            get { return 1000000; } 
         }
 
         /// <summary>

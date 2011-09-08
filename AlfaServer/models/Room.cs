@@ -183,5 +183,6 @@ namespace AlfaServer.models
             get { return _currentRoom; }
         }
 
+        
     }
 }

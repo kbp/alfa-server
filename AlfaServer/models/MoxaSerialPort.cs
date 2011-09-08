@@ -59,10 +59,11 @@ namespace AlfaServer.models
                 {
                     if (floorse.Online == true)
                     {
-                        floorse.Online = false;
-                        alfaEntities.SaveChanges();
+                        //floorse.Online = false;
                     }
                 }
+
+                alfaEntities.SaveChanges();
             }
 
             _serialPort.ReadTimeout = _readTimeout;
