@@ -72,8 +72,8 @@ namespace AlfaServer.models
 
         public void AddRoom(byte controllerNumber, bool onLine, bool isProtected, long roomId)
         {
-//            Dictionary<byte, ReadingKey> keys = this.GetAllKeys(controllerNumber);
-            this.Add(new Room(controllerNumber, null, onLine, isProtected, roomId, 12));
+            Dictionary<byte, ReadingKey> keys = this.GetAllKeys(controllerNumber);
+            this.Add(new Room(controllerNumber, keys, onLine, isProtected, roomId, 12));
             _logger.Info("room id = {0} add", roomId);
         }
 
@@ -293,7 +293,7 @@ namespace AlfaServer.models
         /// <param name="name">Фамилия Имя Отчество</param>
         /// <param name="endDate">Дата окончания срока действия ключа</param>
         /// <returns></returns>
-        public bool SetKey(byte controllerNumber, byte keyNumber, byte[] keyCode, string name, DateTime endDate)
+        public bool SetKey(byte controllerNumber, byte keyNumber, byte[] keyCode, string name, byte type, DateTime endDate)
         {
             if (keyCode.Length != 5)
             {
@@ -330,7 +330,8 @@ namespace AlfaServer.models
                                        select key).First();
 
                     currentKey.FIO = name;
-                    currentKey.RemoveDate = endDate;
+                    currentKey.EndDate = endDate;
+                    currentKey.Type = type;
                     currentKey.keyCode = BitConverter.ToString(keyCode);
                 }
             }
@@ -365,8 +366,9 @@ namespace AlfaServer.models
             {
                 _port.WriteBufferToPort(package);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                _logger.Error(e.ToString());
                 return false;
             }
 
@@ -378,20 +380,46 @@ namespace AlfaServer.models
                     {
                         if (key.CellNumber == keyNumber)
                         {
+                            AlfaEntities alfaEntities = new AlfaEntities();
+                            var k = (from keyse in alfaEntities.Keys
+                                     where keyse.KeyId == key.KeyId
+                                     select keyse).FirstOrDefault();
+                            if (k != null)
+                            {
+                                k.FIO = "";
+                                k.CreateDate = null;
+                                k.keyCode = "00";
+                                k.GuestIdn = null;
+                                k.EndDate = null;
+                                k.RemoveDate = null;
+                                alfaEntities.SaveChanges();
+                                _logger.Info("saved ClientServiceCallback.AlertUnsetKey");
+                            }
+
                             key.FIO = "";
                             key.CreateDate = null;
-                            key.keyCode = "";
+                            key.keyCode = "00";
                             key.GuestIdn = null;
-                            _alfaEntities.SaveChanges();
+                            key.EndDate = null;
+                            key.RemoveDate = null;
+                            //key.RemoveDate = DateTime.Now;
+                            
 
-                            ClientServiceCallback.AlertUnsetKey(_portName, room.ControllerNumber);
+                            _logger.Info("send ClientServiceCallback.AlertUnsetKey");
+                            if (ClientServiceCallback != null)
+                            {
+                                ClientServiceCallback.AlertUnsetKey(_portName, room.ControllerNumber);
+                            }
+                            
+
+                            return true;
                         }
-
-                        break;
                     }
+
+                    break;
                 }
             }
-            return true;
+            return false;
         }
 
         /// <summary>

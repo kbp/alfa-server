@@ -60,6 +60,8 @@
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Presentation" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,13 +85,13 @@
     <Compile Include="models\MoxaSerialPort.cs" />
     <Compile Include="models\ReadData.cs" />
     <Compile Include="models\TestPort.cs" />
-    <Compile Include="Services\IClientService.cs" />
-    <Compile Include="Services\IClientServiceCallback.cs" />
+    <Compile Include="models\Services\IClientService.cs" />
+    <Compile Include="models\Services\IClientServiceCallback.cs" />
     <Compile Include="models\FloorsCollection.cs" />
     <Compile Include="MxComPortConfig.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="models\Floor.cs" />
-    <Compile Include="Services\ClientService.cs" />
+    <Compile Include="models\Services\ClientService.cs" />
     <Compile Include="models\Room.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

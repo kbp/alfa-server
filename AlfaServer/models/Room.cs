@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel.Channels;
+using System.Windows.Forms;
 using AlfaServer.Entities;
 using NLog;
+using Keys = AlfaServer.Entities.Keys;
 
 namespace AlfaServer.models
 {
@@ -50,10 +53,11 @@ namespace AlfaServer.models
 
         private void UpdateKeysState(Dictionary<byte, ReadingKey> keys)
         {
+            _logger.Info("UpdateKeysState");
             for (byte i = 0; i < _config.CountKeysCells; i++)
             {
                 bool keyIsFound = false;
-                _logger.Debug("step {0}", i);
+                
                 foreach (Keys keyItem in _currentRoom.Keys)
                 {
                     if (keys.Count > 0)
@@ -79,19 +83,33 @@ namespace AlfaServer.models
 
                 if (!keyIsFound)
                 {
-                    _logger.Debug("key {0} not found", i);
+                    AlfaEntities alfaEntities = new AlfaEntities();
+                    _logger.Info("key {0} not found", i);
                     Keys keysItem = new Keys();
                     keysItem.CellNumber = i;
                     keysItem.EndDate = null;
                     keysItem.CreateDate = DateTime.Now;
                     keysItem.Type = 0;
                     keysItem.keyCode = "00";
-                    keysItem.FIO = "";
-                    _currentRoom.Keys.Add(keysItem);
+                    keysItem.FIO = ""; 
+                    keysItem.RoomId = _currentRoom.RoomId;
+
+                    try
+                    {
+                        alfaEntities.Keys.AddObject(keysItem);
+                        //                    _currentRoom.Keys.Add(keysItem);
+                        alfaEntities.SaveChanges();
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(exception.ToString());
+                    }
+
                 }
             }
 
-            _alfaEntities.SaveChanges();
+           
+
         }
 
         private readonly AlfaEntities _alfaEntities;
