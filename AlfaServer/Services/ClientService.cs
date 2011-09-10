@@ -12,16 +12,16 @@ namespace AlfaServer.Services
     {
         private readonly NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
 
-        public bool SetKey(byte[] key, byte number, string portName, byte controllerNumber, string name, DateTime endDate)
+        public bool SetKey(byte[] key, byte number, string portName, byte controllerNumber, string name, byte type, DateTime endDate)
         {
-            _logger.Info("service: set key cell {0}, controller {1}, port = {2}", number, controllerNumber, portName);
+            _logger.Info("service: set key cell {0}, controller {1}, port = {2}, name = {3},  date = {4}", number, controllerNumber, portName, name, endDate);
             FloorsCollection floorsCollection = FloorsCollection.GetInstance();
 
             foreach (Floor floorsCollectionItem in floorsCollection)
             {
                 if (floorsCollectionItem.PortName == portName)
                 {
-                    floorsCollectionItem.SetKey(controllerNumber, number, key, name, endDate);
+                    floorsCollectionItem.SetKey(controllerNumber, number, key, name, type, endDate);
                     if (floorsCollectionItem.CheckingExistenceKey(controllerNumber, key))
                     {
                         _logger.Info("service: set key cell {0}, controller {1}, port = {2} return TRUE", number, controllerNumber, portName);
@@ -37,19 +37,25 @@ namespace AlfaServer.Services
 
         public bool UnsetKey(string portName, byte controllerNumber, byte number)
         {
-            _logger.Info("service: unset key cell {0}, controller {1}, port = {2}", number, controllerNumber, portName);
+//            _logger.Info("service: unset key cell {0}, controller {1}, port = {2}", number, controllerNumber, portName);
 
             FloorsCollection floorsCollection = FloorsCollection.GetInstance();
             //todo помечать в базе время удаления
             foreach (Floor floorsCollectionItem in floorsCollection)
             {
+
                 if (floorsCollectionItem.PortName == portName)
                 {
-                    floorsCollectionItem.UnsetKey(controllerNumber, number);
-                    return true;
+                    if (floorsCollectionItem.UnsetKey(controllerNumber, number))
+                    {
+                        _logger.Info("service: unset key cell {0}, controller {1}, port = {2} return TRUE", number, controllerNumber, portName);
+                        return true;
+                    }
+
+                    break;
                 }
             }
-
+            _logger.Info("service: unset key cell {0}, controller {1}, port = {2} return FALSE", number, controllerNumber, portName);
             return false;
         }
 

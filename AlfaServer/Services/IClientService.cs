@@ -11,7 +11,7 @@ namespace AlfaServer.Services
     {
         //ключ, номер в ячейке, этаж, контроллер, тип ключа, фио пользователя, дата окончания срока действия ключа
         [OperationContract]
-        bool SetKey(byte[] key, byte number, string portName, byte controllerNumber, string name, DateTime endDate);
+        bool SetKey(byte[] key, byte number, string portName, byte controllerNumber, string name, byte type, DateTime endDate);
 
         //этаж, номер контроллера, номер ячейки
         [OperationContract]
