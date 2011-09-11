@@ -172,7 +172,16 @@ namespace AlfaServer.models
                             {
                                 key.RemoveDate = currentDate;
                                 key.EndDate = null;
+                                key.FIO = "";
+                                key.keyCode = "00";
                                 //todo закоменчено ибо кому то лень в базе ключам время отмены большое поставить. вернуть на место после тестов!!!!!!!
+                                
+                                _logger.Info("send ClientServiceCallback.AlertUnsetKey");
+                                if (ClientServiceCallback != null)
+                                {
+                                    ClientServiceCallback.AlertUnsetKey(_portName, room.ControllerNumber);
+                                }
+
                                 UnsetKey(room.ControllerNumber, (byte)key.CellNumber);
                             }
                         }
@@ -332,6 +341,7 @@ namespace AlfaServer.models
                     currentKey.FIO = name;
                     currentKey.EndDate = endDate;
                     currentKey.Type = type;
+                    currentKey.CreateDate = DateTime.Now;
                     currentKey.keyCode = BitConverter.ToString(keyCode);
                 }
             }
@@ -384,6 +394,7 @@ namespace AlfaServer.models
                             var k = (from keyse in alfaEntities.Keys
                                      where keyse.KeyId == key.KeyId
                                      select keyse).FirstOrDefault();
+
                             if (k != null)
                             {
                                 k.FIO = "";
@@ -403,14 +414,6 @@ namespace AlfaServer.models
                             key.EndDate = null;
                             key.RemoveDate = null;
                             //key.RemoveDate = DateTime.Now;
-                            
-
-                            _logger.Info("send ClientServiceCallback.AlertUnsetKey");
-                            if (ClientServiceCallback != null)
-                            {
-                                ClientServiceCallback.AlertUnsetKey(_portName, room.ControllerNumber);
-                            }
-                            
 
                             return true;
                         }
@@ -538,7 +541,6 @@ namespace AlfaServer.models
                         _logger.Debug("reading succesful");
                         break;
                     }
-                        
                 }
             }
 
