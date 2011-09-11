@@ -410,6 +410,7 @@ namespace AlfaServer.models
                             key.GuestIdn = null;
                             key.EndDate = null;
                             key.RemoveDate = null;
+                            key.Type = 0;
                             //key.RemoveDate = DateTime.Now;
 
                             return true;
