@@ -159,7 +159,10 @@ namespace AlfaServer.models
                         {
                             room.CurrentRoom.OnLine = true;
                             room.SaveChanges();
-                            ClientServiceCallback.AlertAboutControllerBeganRespond(_portName, _port.GetNumberLastRespondedController());
+                            if (ClientServiceCallback != null)
+                            {
+                                ClientServiceCallback.AlertAboutControllerBeganRespond(_portName, _port.GetNumberLastRespondedController());
+                            }
                         }
                         room.CountReadError = 0;
                     }
@@ -267,13 +270,6 @@ namespace AlfaServer.models
                     outputState
                 );
 
-                _logger.Info("isProtected = {0}", isProtected);
-                if (ClientServiceCallback != null)
-                {
-                    ClientServiceCallback.AlertGerkon(room.RoomId);
-                }
-                
-
                 if (ClientServiceCallback != null && isProtected)
                 {
                     ClientServiceCallback.AlertGerkon(room.RoomId);
@@ -300,6 +296,7 @@ namespace AlfaServer.models
         /// <param name="keyNumber"> порядковый номер ключа 0 - 11 </param>
         /// <param name="keyCode">код ключа (массив 5 байт)</param>
         /// <param name="name">Фамилия Имя Отчество</param>
+        /// <param name="type">Тип ключа</param>
         /// <param name="endDate">Дата окончания срока действия ключа</param>
         /// <returns></returns>
         public bool SetKey(byte controllerNumber, byte keyNumber, byte[] keyCode, string name, byte type, DateTime endDate)
