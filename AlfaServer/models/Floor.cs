@@ -7,7 +7,7 @@ using AlfaServer.Entities;
 using AlfaServer.Services;
 using NLog;
 
-namespace AlfaServer.models
+namespace AlfaServer.Models
 {
     public class ReadingKey
     {
@@ -168,29 +168,20 @@ namespace AlfaServer.models
                     }
                     if (checkTime)
                     {
-                        AlfaEntities alfaEntities = new AlfaEntities();
                         foreach (Keys key in room.CurrentRoom.Keys)
                         {
                             if (key.EndDate < currentDate)
                             {
-                                key.RemoveDate = currentDate;
-                                key.EndDate = null;
-                                key.FIO = "";
-                                key.keyCode = "00";
-                                //todo закоменчено ибо кому то лень в базе ключам время отмены большое поставить. вернуть на место после тестов!!!!!!!
-                                
                                 _logger.Info("send ClientServiceCallback.AlertUnsetKey");
                                 if (ClientServiceCallback != null)
                                 {
                                     ClientServiceCallback.AlertUnsetKey(_portName, room.ControllerNumber);
                                 }
-
                                 UnsetKey(room.ControllerNumber, (byte)key.CellNumber);
                             }
                         }
 
                         _logger.Info("room {0}, controller {1}, port {2} проверены и отменены ключи по времени");
-                        alfaEntities.SaveChanges();
                     }
                     
                 }
@@ -401,7 +392,7 @@ namespace AlfaServer.models
                                 k.EndDate = null;
                                 k.RemoveDate = null;
                                 alfaEntities.SaveChanges();
-                                _logger.Info("saved ClientServiceCallback.AlertUnsetKey");
+                                _logger.Info("saved UnsetKey");
                             }
 
                             key.FIO = "";

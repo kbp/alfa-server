@@ -1,5 +1,5 @@
 ﻿using System.ServiceModel;
-using AlfaServer.models;
+using AlfaServer.Models;
 using AlfaServer.Services;
 using NLog;
 

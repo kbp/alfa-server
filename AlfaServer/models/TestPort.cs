@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AlfaServer.models
+namespace AlfaServer.Models
 {
     class TestPort : IPort
     {

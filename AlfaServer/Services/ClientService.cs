@@ -5,7 +5,7 @@ using AlfaServer.Entities;
 
 namespace AlfaServer.Services
 {
-    using models;
+    using Models;
 
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
     public class ClientService : IClientService

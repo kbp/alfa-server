@@ -2,7 +2,7 @@
 
 namespace AlfaServer
 {
-    using models;
+    using Models;
 
 
     static class Program

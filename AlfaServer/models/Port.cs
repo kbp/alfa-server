@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 
-
-namespace AlfaServer.models
+namespace AlfaServer.Models
 {
     interface IPort
     {

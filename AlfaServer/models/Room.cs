@@ -7,7 +7,7 @@ using AlfaServer.Entities;
 using NLog;
 using Keys = AlfaServer.Entities.Keys;
 
-namespace AlfaServer.models
+namespace AlfaServer.Models
 {
     /// <summary>
     /// контроллер двери

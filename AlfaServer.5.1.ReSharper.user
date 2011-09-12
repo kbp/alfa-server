@@ -11,8 +11,7 @@
     <RecentFiles>
       <File id="9845AA73-CE23-43AC-9503-C51F1FF97712/d:Properties/f:AssemblyInfo.cs" caret="24" fromTop="0" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:MxComPortConfig.cs" caret="716" fromTop="19" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:ReadData.cs" caret="132" fromTop="6" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:TestPort.cs" caret="680" fromTop="25" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:ReadData.cs" caret="132" fromTop="6" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:Configuration.cs" caret="1693" fromTop="15" />
       <File id="9845AA73-CE23-43AC-9503-C51F1FF97712/f:DoorTest.cs" caret="833" fromTop="26" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Entities/f:ModelAlfa.Designer.cs" caret="3521" fromTop="10" />
@@ -21,50 +20,51 @@
       <File id="9845AA73-CE23-43AC-9503-C51F1FF97712/d:Entities/f:ModelAlfa.edmx" caret="350" fromTop="6" />
       <File id="9845AA73-CE23-43AC-9503-C51F1FF97712/d:Entities/f:ModelAlfa.Designer.cs" caret="3233" fromTop="0" />
       <File id="9845AA73-CE23-43AC-9503-C51F1FF97712/f:FloorTest.cs" caret="441" fromTop="10" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Room.cs" caret="3405" fromTop="74" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Room.cs" caret="3405" fromTop="74" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:NLog.config" caret="316" fromTop="5" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:ConsoleApplication.cs" caret="622" fromTop="24" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:AlfaService.cs" caret="1095" fromTop="28" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Entities/f:ModelAlfa.edmx" caret="26591" fromTop="20" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="608" fromTop="17" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientService.cs" caret="939" fromTop="20" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="6841" fromTop="19" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Port.cs" caret="407" fromTop="12" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:MoxaSerialPort.cs" caret="9467" fromTop="96" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="1399" fromTop="5" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:FloorsCollection.cs" caret="1412" fromTop="18" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="798" fromTop="16" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientService.cs" caret="630" fromTop="8" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="2140" fromTop="13" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:FloorsCollection.cs" caret="0" fromTop="0" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="8973" fromTop="16" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="216" fromTop="9" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:TestPort.cs" caret="0" fromTop="0" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Port.cs" caret="33" fromTop="0" />
     </RecentFiles>
     <RecentEdits>
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="4769" fromTop="9" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="4341" fromTop="2" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="2974" fromTop="26" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="2470" fromTop="17" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientService.cs" caret="813" fromTop="14" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="2329" fromTop="14" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="5990" fromTop="15" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="9252" fromTop="20" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="16945" fromTop="19" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="17109" fromTop="23" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="9001" fromTop="24" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="6235" fromTop="16" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="6505" fromTop="22" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="7586" fromTop="21" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientService.cs" caret="1696" fromTop="18" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="1016" fromTop="22" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="7639" fromTop="13" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="8242" fromTop="13" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="598" fromTop="16" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="5249" fromTop="23" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="5261" fromTop="11" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="5249" fromTop="23" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="598" fromTop="16" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:MoxaSerialPort.cs" caret="143" fromTop="5" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:MoxaSerialPort.cs" caret="1353" fromTop="16" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:MoxaSerialPort.cs" caret="2056" fromTop="31" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:MoxaSerialPort.cs" caret="1524" fromTop="18" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:MoxaSerialPort.cs" caret="1960" fromTop="29" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:MoxaSerialPort.cs" caret="8649" fromTop="19" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:Floor.cs" caret="1399" fromTop="5" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:FloorsCollection.cs" caret="3493" fromTop="21" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:models/f:FloorsCollection.cs" caret="1019" fromTop="0" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="143" fromTop="5" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="1353" fromTop="16" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="2056" fromTop="31" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="1524" fromTop="18" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="1960" fromTop="29" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="8649" fromTop="19" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="1399" fromTop="5" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:FloorsCollection.cs" caret="3493" fromTop="21" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:FloorsCollection.cs" caret="1019" fromTop="0" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="13848" fromTop="14" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="14510" fromTop="22" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="12030" fromTop="16" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="19363" fromTop="24" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="6398" fromTop="17" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="6703" fromTop="22" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="6178" fromTop="12" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="5543" fromTop="28" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="10540" fromTop="16" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="9543" fromTop="15" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="14754" fromTop="22" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="216" fromTop="9" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Port.cs" caret="33" fromTop="0" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -170,7 +170,7 @@
       <Item value="newControllerNumber" priority="0" />
       <Item value="result" priority="13" />
       <Item value="readNumberLastKeyPackage`0" priority="0" />
-      <Item value="key" priority="33" />
+      <Item value="key" priority="38" />
       <Item value="readPackage" priority="2" />
       <Item value="models" priority="10" />
       <Item value="buffer" priority="16" />
@@ -221,7 +221,7 @@
       <Item value="case" priority="2" />
       <Item value="break" priority="5" />
       <Item value="commands" priority="0" />
-      <Item value="DateTime`0" priority="7" />
+      <Item value="DateTime`0" priority="8" />
       <Item value="doorCollection" priority="9" />
       <Item value="DoorCollection" priority="0" />
       <Item value="do" priority="0" />
@@ -364,7 +364,7 @@
       <Item value="Linq" priority="1" />
       <Item value="Room`0" priority="0" />
       <Item value="Keys`0" priority="7" />
-      <Item value="currentKey" priority="2" />
+      <Item value="currentKey" priority="3" />
       <Item value="endDate" priority="1" />
       <Item value="_portName" priority="5" />
       <Item value="Buffer`0" priority="0" />
@@ -537,7 +537,7 @@
       <Item value="Length" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.DateTime">
-      <Item value="Now" priority="6" />
+      <Item value="Now" priority="7" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.DateTime">
       <Item value="ToString`0" priority="2" />
@@ -758,10 +758,10 @@
     <ItemStatistics item="Qualified:AlfaServer.Entities.Keys">
       <Item value="CellNumber" priority="2" />
       <Item value="EndDate" priority="0" />
-      <Item value="CreateDate" priority="0" />
-      <Item value="Type" priority="0" />
-      <Item value="keyCode" priority="1" />
-      <Item value="FIO" priority="0" />
+      <Item value="CreateDate" priority="1" />
+      <Item value="Type" priority="2" />
+      <Item value="keyCode" priority="2" />
+      <Item value="FIO" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Data.Objects.DataClasses.EntityCollection`1">
       <Item value="Add`0" priority="0" />

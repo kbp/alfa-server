@@ -81,18 +81,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelAlfa.edmx</DependentUpon>
     </Compile>
-    <Compile Include="models\Port.cs" />
-    <Compile Include="models\MoxaSerialPort.cs" />
-    <Compile Include="models\ReadData.cs" />
-    <Compile Include="models\TestPort.cs" />
+    <Compile Include="Models\Port.cs" />
+    <Compile Include="Models\MoxaSerialPort.cs" />
+    <Compile Include="Models\ReadData.cs" />
+    <Compile Include="Models\TestPort.cs" />
     <Compile Include="Services\IClientService.cs" />
     <Compile Include="Services\IClientServiceCallback.cs" />
-    <Compile Include="models\FloorsCollection.cs" />
+    <Compile Include="Models\FloorsCollection.cs" />
     <Compile Include="MxComPortConfig.cs" />
     <Compile Include="Configuration.cs" />
-    <Compile Include="models\Floor.cs" />
+    <Compile Include="Models\Floor.cs" />
     <Compile Include="Services\ClientService.cs" />
-    <Compile Include="models\Room.cs" />
+    <Compile Include="Models\Room.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

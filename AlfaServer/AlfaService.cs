@@ -7,7 +7,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.ServiceProcess;
 using System.Text;
-using AlfaServer.models;
+using AlfaServer.Models;
 using AlfaServer.Services;
 using NLog;
 

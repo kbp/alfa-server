@@ -7,7 +7,7 @@ using System.Linq;
 using AlfaServer.Entities;
 using NLog;
 
-namespace AlfaServer.models
+namespace AlfaServer.Models
 {
     public class MoxaSerialPort : IPort
     {

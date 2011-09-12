@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace AlfaServerTest
 {
-    using AlfaServer.models;
+    using AlfaServer.Models;
     public class DoorTest
     {
         [Test]

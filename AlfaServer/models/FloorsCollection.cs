@@ -4,7 +4,7 @@ using System.Threading;
 using AlfaServer.Entities;
 using NLog;
 
-namespace AlfaServer.models
+namespace AlfaServer.Models
 {
     public class FloorsCollection : List<Floor>
     {

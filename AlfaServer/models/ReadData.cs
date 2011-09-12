@@ -1,4 +1,4 @@
-﻿namespace AlfaServer.models
+﻿namespace AlfaServer.Models
 {
     public class ReadData
     {
