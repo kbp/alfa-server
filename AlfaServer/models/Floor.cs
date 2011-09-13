@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; 
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -159,9 +159,18 @@ namespace AlfaServer.Models
                         {
                             room.CurrentRoom.OnLine = true;
                             room.SaveChanges();
+
                             if (ClientServiceCallback != null)
                             {
-                                ClientServiceCallback.AlertAboutControllerBeganRespond(_portName, _port.GetNumberLastRespondedController());
+                                try
+                                {
+                                    ClientServiceCallback.AlertAboutControllerBeganRespond(_portName, _port.GetNumberLastRespondedController());
+                                }
+                                catch (Exception)
+                                {
+                                    _logger.Info(_portName + " связь с клиентом пропала ");
+                                    ClientServiceCallback = null;
+                                }
                             }
                         }
                         room.CountReadError = 0;
@@ -175,7 +184,15 @@ namespace AlfaServer.Models
                                 _logger.Info("send ClientServiceCallback.AlertUnsetKey");
                                 if (ClientServiceCallback != null)
                                 {
-                                    ClientServiceCallback.AlertUnsetKey(_portName, room.ControllerNumber);
+                                    try
+                                    {
+                                        ClientServiceCallback.AlertUnsetKey(_portName, room.ControllerNumber);
+                                    }
+                                    catch (Exception)
+                                    {
+                                        _logger.Info(_portName + " связь с клиентом пропала ");
+                                        ClientServiceCallback = null;
+                                    }
                                 }
                                 UnsetKey(room.ControllerNumber, (byte)key.CellNumber);
                             }
@@ -227,7 +244,15 @@ namespace AlfaServer.Models
                     {
                         room.CurrentRoom.OnLine = false;
                         room.SaveChanges();
-                        ClientServiceCallback.AlertAboutControllerNotResponsible(_portName, _port.GetNumberLastRespondedController());
+                        try
+                        {
+                            ClientServiceCallback.AlertAboutControllerNotResponsible(_portName, _port.GetNumberLastRespondedController());
+                        }
+                        catch (Exception)
+                        {
+                            _logger.Info(_portName + " связь с клиентом пропала ");
+                            ClientServiceCallback = null;
+                        }
                     }
                 }
 
@@ -263,8 +288,16 @@ namespace AlfaServer.Models
 
                 if (ClientServiceCallback != null && isProtected)
                 {
-                    ClientServiceCallback.AlertGerkon(room.RoomId);
-                    _logger.Info("оповещение отправлено");
+                    try
+                    {
+                        ClientServiceCallback.AlertGerkon(room.RoomId);
+                        _logger.Info("оповещение отправлено");
+                    }
+                    catch (Exception)
+                    {
+                        _logger.Info(_portName + " связь с клиентом пропала ");
+                        ClientServiceCallback = null;
+                    }
                 }
             }
         }
