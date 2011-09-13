@@ -318,19 +318,45 @@ namespace AlfaServer.Models
                 return false;
             }
 
-            foreach (Rooms room in CurrentFloor.Rooms)
+            foreach (Room room in this)
             {
-                if (room.ConrollerId == controllerNumber)
+                if (room.ControllerNumber == controllerNumber)
                 {
-                    Keys currentKey = (from key in room.Keys
-                                       where key.CellNumber == keyNumber
-                                       select key).First();
+                    foreach (Keys key in room.CurrentRoom.Keys)
+                    {
+                        if (key.CellNumber == keyNumber)
+                        {
+                            AlfaEntities alfaEntities = new AlfaEntities();
+                            var k = (from keyse in alfaEntities.Keys
+                                     where keyse.KeyId == key.KeyId
+                                     select keyse).FirstOrDefault();
 
-                    currentKey.FIO = name;
-                    currentKey.EndDate = endDate;
-                    currentKey.Type = type;
-                    currentKey.CreateDate = DateTime.Now;
-                    currentKey.keyCode = BitConverter.ToString(keyCode);
+                            if (k != null)
+                            {
+                                k.FIO = name;
+                                k.CreateDate = DateTime.Now;
+                                k.keyCode = BitConverter.ToString(keyCode);
+                                k.GuestIdn = null;
+                                k.EndDate = endDate;
+                                k.RemoveDate = null;
+                                k.Type = type;
+                                alfaEntities.SaveChanges();
+                                _logger.Info("saved UnsetKey");
+                            }
+
+                            key.FIO = name;
+                            key.CreateDate = DateTime.Now;
+                            key.keyCode = BitConverter.ToString(keyCode);
+                            key.GuestIdn = null;
+                            key.EndDate = endDate;
+                            key.RemoveDate = null;
+                            key.Type = type;
+
+                            return true;
+                        }
+                    }
+
+                    break;
                 }
             }
 
