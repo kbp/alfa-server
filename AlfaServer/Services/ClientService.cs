@@ -124,7 +124,6 @@ namespace AlfaServer.Services
 
         public bool Join(string portName)
         {
-            _logger.Info("service: client join to {0}", portName);
             IClientServiceCallback clientServiceCallback = OperationContext.Current.GetCallbackChannel<IClientServiceCallback>();
 
             FloorsCollection floorsCollection = FloorsCollection.GetInstance();
@@ -136,6 +135,7 @@ namespace AlfaServer.Services
                     if (floor.IsOpen())
                     {
                         floor.ClientServiceCallback = clientServiceCallback;
+                        _logger.Info("service: client join to {0}", portName);
                         return true;
                     }
 

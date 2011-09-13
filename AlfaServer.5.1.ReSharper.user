@@ -25,47 +25,47 @@
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:ConsoleApplication.cs" caret="622" fromTop="24" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:AlfaService.cs" caret="1095" fromTop="28" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Entities/f:ModelAlfa.edmx" caret="26591" fromTop="20" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="798" fromTop="16" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientService.cs" caret="630" fromTop="8" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="2140" fromTop="13" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:FloorsCollection.cs" caret="0" fromTop="0" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="8973" fromTop="16" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:TestPort.cs" caret="0" fromTop="0" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Port.cs" caret="33" fromTop="0" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="5736" fromTop="16" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:Program.cs" caret="73" fromTop="4" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="107" fromTop="4" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientService.cs" caret="204" fromTop="7" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="14" fromTop="0" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="5465" fromTop="19" />
     </RecentFiles>
     <RecentEdits>
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="1016" fromTop="22" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="7712" fromTop="13" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="598" fromTop="16" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="5249" fromTop="23" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:IClientServiceCallback.cs" caret="598" fromTop="16" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="143" fromTop="5" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="1353" fromTop="16" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="2056" fromTop="31" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="1524" fromTop="18" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="1960" fromTop="29" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:MoxaSerialPort.cs" caret="8649" fromTop="19" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="1399" fromTop="5" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:FloorsCollection.cs" caret="3493" fromTop="21" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:FloorsCollection.cs" caret="1019" fromTop="0" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="13318" fromTop="14" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="13953" fromTop="22" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="11500" fromTop="16" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="18806" fromTop="24" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="5923" fromTop="17" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="5543" fromTop="28" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="10010" fromTop="16" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="9013" fromTop="15" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="14197" fromTop="22" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="216" fromTop="9" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="6318" fromTop="17" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="5938" fromTop="28" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="11457" fromTop="16" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="16755" fromTop="22" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="217" fromTop="9" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Port.cs" caret="33" fromTop="0" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="6226" fromTop="19" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="5889" fromTop="8" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="6489" fromTop="18" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="5702" fromTop="3" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="13815" fromTop="24" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="7045" fromTop="19" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="7308" fromTop="18" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="6097" fromTop="3" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="16373" fromTop="24" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="14166" fromTop="31" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="12402" fromTop="6" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="14166" fromTop="0" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="14166" fromTop="6" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="13469" fromTop="26" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="14008" fromTop="29" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="14008" fromTop="29" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="12998" fromTop="2" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="14" fromTop="0" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="741" fromTop="21" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="26450" fromTop="31" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="26450" fromTop="23" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="5591" fromTop="20" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="5907" fromTop="26" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="6670" fromTop="21" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="7010" fromTop="27" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="9139" fromTop="28" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="8871" fromTop="22" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="10675" fromTop="28" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="10431" fromTop="23" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -80,17 +80,17 @@
   </UnitTestRunnerNUnit>
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
-      <Item value="public" priority="87" />
+      <Item value="public" priority="90" />
       <Item value="Configuration`0" priority="11" />
-      <Item value="private" priority="55" />
+      <Item value="private" priority="57" />
       <Item value="static" priority="6" />
-      <Item value="if" priority="62" />
+      <Item value="if" priority="63" />
       <Item value="_configuration" priority="2" />
-      <Item value="new" priority="118" />
+      <Item value="new" priority="119" />
       <Item value="Configuration" priority="0" />
       <Item value="else" priority="22" />
-      <Item value="return" priority="79" />
-      <Item value="null" priority="11" />
+      <Item value="return" priority="80" />
+      <Item value="null" priority="12" />
       <Item value="using" priority="12" />
       <Item value="System" priority="20" />
       <Item value="IO" priority="0" />
@@ -102,10 +102,10 @@
       <Item value="serialPort" priority="31" />
       <Item value="SerialPort" priority="1" />
       <Item value="AlfaServer.controllers" priority="0" />
-      <Item value="bool" priority="51" />
+      <Item value="bool" priority="54" />
       <Item value="string" priority="33" />
       <Item value="message" priority="9" />
-      <Item value="true" priority="48" />
+      <Item value="true" priority="49" />
       <Item value="Console`0" priority="29" />
       <Item value="void" priority="34" />
       <Item value="Encoding`0" priority="2" />
@@ -129,7 +129,7 @@
       <Item value="Tasks" priority="0" />
       <Item value="Task" priority="3" />
       <Item value="Thread`0" priority="20" />
-      <Item value="try" priority="5" />
+      <Item value="try" priority="6" />
       <Item value="Diagnostics" priority="9" />
       <Item value="Debug`0" priority="8" />
       <Item value="ToString`0" priority="4" />
@@ -166,7 +166,7 @@
       <Item value="package" priority="14" />
       <Item value="checkSum" priority="1" />
       <Item value="getCheckSum`0" priority="5" />
-      <Item value="false" priority="38" />
+      <Item value="false" priority="41" />
       <Item value="keyNumber" priority="3" />
       <Item value="newControllerNumber" priority="0" />
       <Item value="result" priority="13" />
@@ -177,7 +177,7 @@
       <Item value="buffer" priority="16" />
       <Item value="bufferLenght" priority="4" />
       <Item value="as" priority="1" />
-      <Item value="get" priority="11" />
+      <Item value="get" priority="12" />
       <Item value="set" priority="5" />
       <Item value="Door`0" priority="3" />
       <Item value="door" priority="10" />
@@ -186,7 +186,7 @@
       <Item value="doorControllerNumber" priority="1" />
       <Item value="Dictionary" priority="10" />
       <Item value="Dictionary&lt;byte,byte[]&gt;" priority="4" />
-      <Item value="foreach" priority="30" />
+      <Item value="foreach" priority="32" />
       <Item value="keys" priority="20" />
       <Item value="readAllKeys`0" priority="0" />
       <Item value="Door" priority="2" />
@@ -195,7 +195,7 @@
       <Item value="PortModel`0" priority="3" />
       <Item value="portModel" priority="6" />
       <Item value="PortModel" priority="6" />
-      <Item value="name" priority="3" />
+      <Item value="name" priority="4" />
       <Item value="operator" priority="0" />
       <Item value="b" priority="2" />
       <Item value="List" priority="3" />
@@ -222,7 +222,7 @@
       <Item value="case" priority="2" />
       <Item value="break" priority="5" />
       <Item value="commands" priority="0" />
-      <Item value="DateTime`0" priority="8" />
+      <Item value="DateTime`0" priority="9" />
       <Item value="doorCollection" priority="9" />
       <Item value="DoorCollection" priority="0" />
       <Item value="do" priority="0" />
@@ -257,13 +257,13 @@
       <Item value="outputState" priority="2" />
       <Item value="Equals`0" priority="0" />
       <Item value="_currentDoorNumber" priority="13" />
-      <Item value="_logger" priority="18" />
+      <Item value="_logger" priority="19" />
       <Item value="continue" priority="3" />
       <Item value="GetLastKey`0" priority="1" />
       <Item value="doorsCollection" priority="1" />
       <Item value="UnsetKey`0" priority="1" />
       <Item value="PortName" priority="17" />
-      <Item value="Program`0" priority="2" />
+      <Item value="Program`0" priority="3" />
       <Item value="BaudRate" priority="0" />
       <Item value="Parity" priority="0" />
       <Item value="Parity`0" priority="0" />
@@ -310,7 +310,7 @@
       <Item value="FloorsCollection" priority="2" />
       <Item value="query" priority="0" />
       <Item value="Rooms`0" priority="16" />
-      <Item value="room" priority="51" />
+      <Item value="room" priority="53" />
       <Item value="Room" priority="1" />
       <Item value="Floor`0" priority="7" />
       <Item value="Floor" priority="5" />
@@ -356,7 +356,7 @@
       <Item value="ModuleHandle`0" priority="1" />
       <Item value="IsOneWay" priority="3" />
       <Item value="clientServiceCallback" priority="2" />
-      <Item value="ClientServiceCallback" priority="3" />
+      <Item value="ClientServiceCallback" priority="4" />
       <Item value="_floor" priority="1" />
       <Item value="currentFloor" priority="0" />
       <Item value="_currentFloor" priority="3" />
@@ -367,7 +367,7 @@
       <Item value="Keys`0" priority="7" />
       <Item value="currentKey" priority="3" />
       <Item value="endDate" priority="1" />
-      <Item value="_portName" priority="5" />
+      <Item value="_portName" priority="6" />
       <Item value="Buffer`0" priority="0" />
       <Item value="Rooms" priority="0" />
       <Item value="roomNumber" priority="1" />
@@ -416,7 +416,7 @@
       <Item value="IsValid" priority="0" />
       <Item value="Key" priority="0" />
       <Item value="ReadingKey" priority="2" />
-      <Item value="k" priority="0" />
+      <Item value="k" priority="1" />
       <Item value="readingSuccesfuly" priority="2" />
       <Item value="ReadAllKeys`0" priority="0" />
       <Item value="Dictionary&lt;byte,ReadingKey&gt;" priority="0" />
@@ -426,7 +426,7 @@
       <Item value="virtual" priority="0" />
       <Item value="MoxaSerialPort`0" priority="3" />
       <Item value="Port`0" priority="1" />
-      <Item value="type" priority="0" />
+      <Item value="type" priority="1" />
       <Item value="testPort" priority="0" />
       <Item value="_port" priority="0" />
       <Item value="GetPort`0" priority="0" />
@@ -434,6 +434,7 @@
       <Item value="ISet" priority="0" />
       <Item value="testingMode" priority="0" />
       <Item value="Entities" priority="0" />
+      <Item value="IDictionary`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.IO.Ports.SerialPort">
       <Item value="ReadTimeout" priority="0" />
@@ -538,7 +539,7 @@
       <Item value="Length" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.DateTime">
-      <Item value="Now" priority="7" />
+      <Item value="Now" priority="8" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.DateTime">
       <Item value="ToString`0" priority="2" />
@@ -567,7 +568,7 @@
       <Item value="ToString`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:NLog.Logger">
-      <Item value="Info`0" priority="19" />
+      <Item value="Info`0" priority="20" />
       <Item value="Debug`0" priority="2" />
       <Item value="Error`0" priority="2" />
       <Item value="Log`0" priority="0" />
@@ -760,7 +761,7 @@
       <Item value="CellNumber" priority="2" />
       <Item value="EndDate" priority="0" />
       <Item value="CreateDate" priority="1" />
-      <Item value="Type" priority="2" />
+      <Item value="Type" priority="3" />
       <Item value="keyCode" priority="2" />
       <Item value="FIO" priority="1" />
     </ItemStatistics>

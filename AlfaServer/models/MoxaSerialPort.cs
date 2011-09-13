@@ -30,6 +30,8 @@ namespace AlfaServer.Models
             try
             {
                 _serialPort.Open();
+                _logger.Info("_serialPort.Open() is open = " + _serialPort.IsOpen); 
+
                 AlfaEntities alfaEntities = new AlfaEntities();
 
                 var floors = from floorse in alfaEntities.Floors
@@ -332,6 +334,7 @@ namespace AlfaServer.Models
 
         public bool IsOpen()
         {
+            _logger.Info("serial port is open = " + _serialPort.IsOpen);
             return _serialPort.IsOpen;
         }
 
@@ -339,6 +342,7 @@ namespace AlfaServer.Models
         {
             try
             {
+                
                 _serialPort.Open();
                 return true;
             }
