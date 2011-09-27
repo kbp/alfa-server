@@ -239,7 +239,7 @@ namespace AlfaServer.Models
 
                 countPoll++;
                 _logger.Trace("опрос номер " + countPoll + " за время " + stopwatch.Elapsed);
-                Thread.Yield();
+//                Thread.Yield();
             }
 // ReSharper disable FunctionNeverReturns
         }
