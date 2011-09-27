@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO.Ports;
 using System.Reflection;
 using System.Threading;
@@ -81,8 +82,8 @@ namespace AlfaServer.Models
             _writeTimeout = timeout;
         }
 
-        private int _readTimeout = 500;
-        private int _writeTimeout = 500;
+        private int _readTimeout = Configuration.GetInstance().ReadTimeout;
+        private int _writeTimeout = Configuration.GetInstance().WriteTimeout;
 
         private string _portName;
 
@@ -112,15 +113,21 @@ namespace AlfaServer.Models
             {
                 try
                 {
+                    System.Diagnostics.Stopwatch stopwatch = new Stopwatch();
+                    stopwatch.Start();
                     WriteBufferToPort(package);
+//                    _logger.Info("write byte " + stopwatch.Elapsed);
                 }
                 catch (Exception)
                 {
                     return new byte[0];
                 }
 
-
+                System.Diagnostics.Stopwatch sw = new Stopwatch();
+                sw.Start();
                 ReadData readData = ReadBufferFromPort(3);
+//                _logger.Info("read byte " + sw.Elapsed);
+                
 
                 if (readData.IsValid)
                 {
@@ -260,7 +267,7 @@ namespace AlfaServer.Models
         /// <param name="buffer"></param>
         public void WriteBufferToPort(byte[] buffer)
         {
-            Thread.Sleep(100);
+//            Thread.Sleep(100);
 
             // todo может быть придется проверять на какой контроллер посылался последний запрос. и ставить таймаут
             // при каждой записи в синхронно ожидается ответ порта
@@ -287,7 +294,8 @@ namespace AlfaServer.Models
         /// <returns></returns>
         private ReadData ReadBufferFromPort(byte size)
         {
-            Thread.Sleep(_config.IntervalSleepTime);
+            //todo oн может падать 
+            Thread.Sleep(_config.IntervalSleepTime / 3);
 
             ReadData readData = new ReadData();
 

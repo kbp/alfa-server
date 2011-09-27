@@ -1,6 +1,7 @@
 ﻿using System; 
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using System.Linq;
 using AlfaServer.Entities;
@@ -45,8 +46,6 @@ namespace AlfaServer.Models
                             select floor).FirstOrDefault();
 
             PortName = portName;
-            _threadStatusPoll = new Thread(StatusPoll) {IsBackground = false, Priority = ThreadPriority.Lowest, Name = "Thread" + portName};
-
             _port = GetPort(portName, testingMode);
         }
 
@@ -89,6 +88,7 @@ namespace AlfaServer.Models
 
         public void StartPolling()
         {
+            _threadStatusPoll = new Thread(StatusPoll) { IsBackground = false, Priority = ThreadPriority.Lowest, Name = "Thread" + _portName };
             _threadStatusPoll.Start();
         }
 
@@ -109,7 +109,7 @@ namespace AlfaServer.Models
 
 
 
-        private readonly Thread _threadStatusPoll;
+        private Thread _threadStatusPoll;
 
         /// <summary>
         /// количество опросов стоящих на охране датчиков между опросами не стоящих на охране датчиков
@@ -124,11 +124,15 @@ namespace AlfaServer.Models
             int countPoll = 0;
             
             DateTime oldDate = DateTime.Now;
-            TimeSpan timeSpan = new TimeSpan(0, 10, 0);
+            //todo заменить на 10 минут
+            TimeSpan timeSpan = new TimeSpan(0, 1, 0);
             bool checkTime = true;
 
             while (true)
             {
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
+                
                 DateTime currentDate = DateTime.Now;
 
                 int time = _config.IntervalSleepTime * this.Count;
@@ -139,7 +143,7 @@ namespace AlfaServer.Models
                     if (room.OnLine)
                     {
                         countOnLineRoom++;
-
+                        
                         if (room.IsProtected)
                         {
                             _logger.Debug("polling protected room {0}, controller {1}, port {2}", room.RoomId, _port.GetNumberLastRespondedController(), _portName);
@@ -154,6 +158,8 @@ namespace AlfaServer.Models
                             }
                             countPoll = 0;
                         }
+
+                        
 
                         if (room.CountReadError > _maxCountReadError)
                         {
@@ -177,28 +183,36 @@ namespace AlfaServer.Models
                     }
                     if (checkTime)
                     {
+                        bool keyChanged = false;
+
                         foreach (Keys key in room.CurrentRoom.Keys)
                         {
                             if (key.EndDate < currentDate)
                             {
-                                _logger.Info("send ClientServiceCallback.AlertUnsetKey");
-                                if (ClientServiceCallback != null)
-                                {
-                                    try
-                                    {
-                                        ClientServiceCallback.AlertUnsetKey(_portName, room.ControllerNumber);
-                                    }
-                                    catch (Exception)
-                                    {
-                                        _logger.Info(_portName + " связь с клиентом пропала ");
-                                        ClientServiceCallback = null;
-                                    }
-                                }
+                                
+                                _logger.Info("roomId {0}, controller {1}, port {2} проверены и отменены ключи по времени", 
+                                    room.RoomId, room.ControllerNumber, _portName);
                                 UnsetKey(room.ControllerNumber, (byte)key.CellNumber);
+                                keyChanged = true;
                             }
                         }
 
-                        _logger.Info("room {0}, controller {1}, port {2} проверены и отменены ключи по времени");
+                        if (keyChanged)
+                        {
+                            if (ClientServiceCallback != null)
+                            {
+                                try
+                                {
+                                    _logger.Info("key changed by time. send ClientServiceCallback.AlertUnsetKey");
+                                    ClientServiceCallback.AlertUnsetKey(_portName, room.ControllerNumber);
+                                }
+                                catch (Exception)
+                                {
+                                    _logger.Info(_portName + " связь с клиентом пропала ");
+                                    ClientServiceCallback = null;
+                                }
+                            }
+                        }
                     }
                     
                 }
@@ -224,6 +238,7 @@ namespace AlfaServer.Models
                 }
 
                 countPoll++;
+                _logger.Trace("опрос номер " + countPoll + " за время " + stopwatch.Elapsed);
                 Thread.Yield();
             }
 // ReSharper disable FunctionNeverReturns

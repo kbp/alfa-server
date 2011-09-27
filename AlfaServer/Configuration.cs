@@ -65,5 +65,15 @@ namespace AlfaServer
         {
             get { return 20; }
         }
+
+        public int ReadTimeout
+        {
+            get { return 50; }
+        }
+
+        public int WriteTimeout
+        {
+            get { return 50; }
+        }
     }
 }

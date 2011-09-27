@@ -47,5 +47,8 @@ namespace AlfaServer.Services
 
         [OperationContract]
         bool SetDataBaseConnectionString(string name, string ip, string login, string password);
+
+        [OperationContract]
+        bool Ping();
     }
 }

@@ -110,8 +110,8 @@
       <LastGenOutput>ModelAlfa.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="NLog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>

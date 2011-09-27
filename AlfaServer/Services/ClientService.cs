@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.ServiceModel;
 using AlfaServer.Entities;
 
@@ -14,6 +15,8 @@ namespace AlfaServer.Services
 
         public bool SetKey(byte[] key, byte number, string portName, byte controllerNumber, string name, byte type, DateTime endDate)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             _logger.Info("service: set key cell {0}, controller {1}, port = {2}, name = {3},  date = {4}", number, controllerNumber, portName, name, endDate);
             FloorsCollection floorsCollection = FloorsCollection.GetInstance();
 
@@ -24,7 +27,8 @@ namespace AlfaServer.Services
                     floorsCollectionItem.SetKey(controllerNumber, number, key, name, type, endDate);
                     if (floorsCollectionItem.CheckingExistenceKey(controllerNumber, key))
                     {
-                        _logger.Info("service: set key cell {0}, controller {1}, port = {2} return TRUE", number, controllerNumber, portName);
+                        _logger.Info("service: set key cell {0}, controller {1}, port = {2} return TRUE время ответа = " + stopwatch.Elapsed, number, controllerNumber, portName);
+
                         return true;
                     }
                     break;
@@ -37,6 +41,8 @@ namespace AlfaServer.Services
 
         public bool UnsetKey(string portName, byte controllerNumber, byte number)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
 //            _logger.Info("service: unset key cell {0}, controller {1}, port = {2}", number, controllerNumber, portName);
 
             FloorsCollection floorsCollection = FloorsCollection.GetInstance();
@@ -48,7 +54,7 @@ namespace AlfaServer.Services
                 {
                     if (floorsCollectionItem.UnsetKey(controllerNumber, number))
                     {
-                        _logger.Info("service: unset key cell {0}, controller {1}, port = {2} return TRUE", number, controllerNumber, portName);
+                        _logger.Info("service: unset key cell {0}, controller {1}, port = {2} return TRUE время ответа = " + stopwatch.Elapsed, number, controllerNumber, portName);
                         return true;
                     }
 
@@ -61,6 +67,8 @@ namespace AlfaServer.Services
 
         public byte[] ReadKey(string portName)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             _logger.Info("service: read key from port = {0}", portName);
 
             FloorsCollection floorsCollection = FloorsCollection.GetInstance();
@@ -69,6 +77,7 @@ namespace AlfaServer.Services
             {
                 if (floor.PortName == portName)
                 {
+                    _logger.Info("service: read key from port = {0} время ответа = " + stopwatch.Elapsed, portName);
                     return floor.GetLastKey(0);
                 }
             }
@@ -77,6 +86,9 @@ namespace AlfaServer.Services
 
         public bool SetRoomToProtect(string portName, byte controllerNumber, bool isProtected)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             _logger.Info("service: set room to protect {0} controller {1}, port = {2}", isProtected, controllerNumber, portName);
 
             FloorsCollection floorsCollection = FloorsCollection.GetInstance();
@@ -87,7 +99,7 @@ namespace AlfaServer.Services
 
                     if (floorsCollectionItem.SetRoomToProtect(controllerNumber, isProtected))
                     {
-                        _logger.Info("service: set room to protect {0} controller {1}, port = {2} return TRUE", isProtected, controllerNumber, portName);
+                        _logger.Info("service: set room to protect {0} controller {1}, port = {2} return TRUE время ответа = " + stopwatch.Elapsed, isProtected, controllerNumber, portName);
                         return true;
                     }
                     break;
@@ -100,6 +112,9 @@ namespace AlfaServer.Services
 
         public bool SetLight(string portName, byte controllerNumber, bool lightOn)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             _logger.Info("service: set light on {0} controller {1}, port = {2}", lightOn, controllerNumber, portName);
 
             FloorsCollection floorsCollection = FloorsCollection.GetInstance();
@@ -110,7 +125,7 @@ namespace AlfaServer.Services
                 {
                     if (floorsCollectionItem.SetLight(controllerNumber, lightOn))
                     {
-                        _logger.Info("service: set light on {0} controller {1}, port = {2} return TRUE", lightOn, controllerNumber, portName);
+                        _logger.Info("service: set light on {0} controller {1}, port = {2} return TRUE время ответа = " + stopwatch.Elapsed, lightOn, controllerNumber, portName);
                         return true;
                     }
 
@@ -124,7 +139,8 @@ namespace AlfaServer.Services
 
         public bool Join(string portName)
         {
-            IClientServiceCallback clientServiceCallback = OperationContext.Current.GetCallbackChannel<IClientServiceCallback>();
+            _logger.Info("join");
+            Stopwatch stopwatch = new Stopwatch();
 
             FloorsCollection floorsCollection = FloorsCollection.GetInstance();
 
@@ -134,8 +150,18 @@ namespace AlfaServer.Services
                 {
                     if (floor.IsOpen())
                     {
-                        floor.ClientServiceCallback = clientServiceCallback;
-                        _logger.Info("service: client join to {0}", portName);
+                        if (floor.ClientServiceCallback == null)
+                        {
+                            IClientServiceCallback clientServiceCallback = OperationContext.Current.GetCallbackChannel<IClientServiceCallback>();
+                            floor.ClientServiceCallback = clientServiceCallback;
+
+                            _logger.Info("service: join new client on port {0} " + stopwatch.Elapsed, portName);
+                        }
+                        else
+                        {
+                            _logger.Info("service: online {0} " + stopwatch.Elapsed, portName);
+                        }
+                        
                         return true;
                     }
 
@@ -230,6 +256,11 @@ namespace AlfaServer.Services
         public bool SetDataBaseConnectionString(string name, string ip, string login, string password)
         {
 
+            return true;
+        }
+
+        public bool Ping()
+        {
             return true;
         }
     }
