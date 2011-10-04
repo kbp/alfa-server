@@ -541,16 +541,20 @@ namespace AlfaServer.Models
         ///<returns></returns>
         private bool SetStateOutputs(byte controllerNumber, byte outputState)
         {
-            byte[] package = new byte[9];
+            byte[] package = new byte[4];
 
             package[0] = controllerNumber;
             package[1] = 13;
             package[2] = outputState;
             package[3] = GetCheckSum(package);
 
-
+            Thread.Sleep(100);
             try
             {
+                lock (package)
+                {
+                    
+                }
                 _port.WriteBufferToPort(package);
             }
             catch (Exception)
@@ -558,6 +562,7 @@ namespace AlfaServer.Models
                 return false;
             }
 
+            _logger.Info("set SetStateOutputs bit " + outputState + " on controler " + controllerNumber);
 
             return true;
         }
@@ -736,7 +741,8 @@ namespace AlfaServer.Models
 
             if (lightOn)
             {
-                state = 64;
+                state = 255;
+                _logger.Info("set light bit " + state + " on controler " + controllerNumber);
             }
             else
             {

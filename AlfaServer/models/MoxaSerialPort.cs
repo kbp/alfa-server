@@ -84,7 +84,7 @@ namespace AlfaServer.Models
 
         private int _readTimeout = Configuration.GetInstance().ReadTimeout;
         private int _writeTimeout = Configuration.GetInstance().WriteTimeout;
-
+        
         private string _portName;
 
         private Configuration _config;
