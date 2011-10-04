@@ -263,5 +263,65 @@ namespace AlfaServer.Services
         {
             return true;
         }
+
+        public void SetAllRoomLight(string portName, bool lightOn)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            FloorsCollection floorsCollection = FloorsCollection.GetInstance();
+
+            foreach (Floor floorsCollectionItem in floorsCollection)
+            {
+                if (floorsCollectionItem.PortName == portName)
+                {
+                    foreach (Room room in floorsCollectionItem)
+                    {
+                        //todo вынести параметр в конфиг
+                        // три попытки включить/выключить свет
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (floorsCollectionItem.SetLight(room.ControllerNumber, lightOn))
+                                break;
+                        }
+                    }
+
+                    _logger.Info("service: set light {0} on port = {1}", lightOn, portName);
+                    return;
+                }
+            }
+
+            
+        }
+
+        public void SetAllRoomToProtect(string portName, bool isProtected)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            FloorsCollection floorsCollection = FloorsCollection.GetInstance();
+
+            foreach (Floor floorsCollectionItem in floorsCollection)
+            {
+                if (floorsCollectionItem.PortName == portName)
+                {
+                    foreach (Room room in floorsCollectionItem)
+                    {
+                        //todo вынести параметр в конфиг
+                        // три попытки включить/выключить охрану
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (floorsCollectionItem.SetRoomToProtect(room.ControllerNumber, isProtected))
+                                break;
+                        }
+                    }
+
+                    _logger.Info("service: set all rooms to proteced {0} on port = {1}", isProtected, portName);
+                    return;
+                }
+            }
+
+
+        }
     }
 }

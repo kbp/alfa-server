@@ -50,5 +50,11 @@ namespace AlfaServer.Services
 
         [OperationContract]
         bool Ping();
+
+        [OperationContract(IsOneWay = true)]
+        void SetAllRoomToProtect(string portName, bool isProtected);
+
+        [OperationContract(IsOneWay = true)]
+        void SetAllRoomLight(string portName, bool lightOn);
     }
 }
