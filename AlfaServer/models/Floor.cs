@@ -305,7 +305,17 @@ namespace AlfaServer.Models
                 {
                     try
                     {
-                        ClientServiceCallback.AlertGerkon(room.RoomId);
+                        bool alarm;
+                        if (state[1] > 13)
+                        {
+                            alarm = true;
+                        }
+                        else
+                        {
+                            alarm = false;
+                        }
+
+                        ClientServiceCallback.AlertGerkon(room.RoomId, state[1], alarm);
                         _logger.Info("оповещение отправлено");
                     }
                     catch (Exception)
@@ -710,6 +720,23 @@ namespace AlfaServer.Models
             return false;
         }
 
+        public void SetAllRoomToProtect(bool isProtected)
+        {
+            foreach (Room room in this)
+            {
+                //todo вынести параметр в конфиг
+                // 10 попытки включить/выключить свет
+                for (int i = 0; i < 10; i++)
+                {
+                    if (SetRoomToProtect(room.ControllerNumber, isProtected))
+                        break;
+                }
+            }
+
+            ClientServiceCallback.ReloadRooms(_portName, this.CurrentFloor.FloorId);
+            _logger.Info("set all guard {0} on port = {1}", isProtected, _portName);
+        }
+
         public bool SetRoomToProtect(byte controllerNumber, bool isProtected)
         {
             foreach (Room room in this)
@@ -732,6 +759,23 @@ namespace AlfaServer.Models
             }
 
             return false;
+        }
+
+        public void SetLightOnAllFloor(bool lightOn)
+        {
+            foreach (Room room in this)
+            {
+                //todo вынести параметр в конфиг
+                // 10 попытки включить/выключить свет
+                for (int i = 0; i < 10; i++)
+                {
+                    if (SetLight(room.ControllerNumber, lightOn))
+                        break;
+                }
+            }
+
+            ClientServiceCallback.ReloadRooms(_portName, this.CurrentFloor.FloorId);
+            _logger.Info("set all light {0} on port = {1}", lightOn, _portName);
         }
 
         public bool SetLight(byte controllerNumber, bool lightOn)

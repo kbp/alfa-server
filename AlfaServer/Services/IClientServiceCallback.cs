@@ -17,7 +17,7 @@ namespace AlfaServer.Services
         void AlertComPortBeganRespond(string portName);
         
         [OperationContract(IsOneWay = true)]
-        void AlertGerkon(long roomId);
+        void AlertGerkon(long roomId, byte keyNumber, bool alarm);
 
         [OperationContract(IsOneWay = true)]
         void AlertUnsetKey(string portName, byte controllerNumber);
@@ -27,5 +27,8 @@ namespace AlfaServer.Services
 
         [OperationContract(IsOneWay = true)]
         void AlertChangeFloors(string portName);
+
+        [OperationContract(IsOneWay = true)]
+        void ReloadRooms(string portName, long floorId);
     }
 }

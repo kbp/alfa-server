@@ -275,23 +275,12 @@ namespace AlfaServer.Services
             {
                 if (floorsCollectionItem.PortName == portName)
                 {
-                    foreach (Room room in floorsCollectionItem)
-                    {
-                        //todo вынести параметр в конфиг
-                        // три попытки включить/выключить свет
-                        for (int i = 0; i < 3; i++)
-                        {
-                            if (floorsCollectionItem.SetLight(room.ControllerNumber, lightOn))
-                                break;
-                        }
-                    }
+                    floorsCollectionItem.SetLightOnAllFloor(lightOn);
+                    _logger.Info("service: set all light {0} on port = {1}", lightOn, portName);
 
-                    _logger.Info("service: set light {0} on port = {1}", lightOn, portName);
                     return;
                 }
             }
-
-            
         }
 
         public void SetAllRoomToProtect(string portName, bool isProtected)
@@ -305,22 +294,12 @@ namespace AlfaServer.Services
             {
                 if (floorsCollectionItem.PortName == portName)
                 {
-                    foreach (Room room in floorsCollectionItem)
-                    {
-                        //todo вынести параметр в конфиг
-                        // три попытки включить/выключить охрану
-                        for (int i = 0; i < 3; i++)
-                        {
-                            if (floorsCollectionItem.SetRoomToProtect(room.ControllerNumber, isProtected))
-                                break;
-                        }
-                    }
+                    floorsCollectionItem.SetAllRoomToProtect(isProtected);
+                    _logger.Info("service: set all guard {0} on port = {1}", isProtected, portName);
 
-                    _logger.Info("service: set all rooms to proteced {0} on port = {1}", isProtected, portName);
                     return;
                 }
             }
-
 
         }
     }
