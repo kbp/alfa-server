@@ -355,6 +355,8 @@ namespace AlfaServer.Models
                 return false;
             }
 
+            Thread.Sleep(100);
+
             byte[] package = new byte[9];
 
             package[0] = controllerNumber;
