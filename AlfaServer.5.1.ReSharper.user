@@ -12,7 +12,6 @@
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:MxComPortConfig.cs" caret="716" fromTop="19" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:ReadData.cs" caret="132" fromTop="6" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Entities/f:ModelAlfa.Designer.cs" caret="3521" fromTop="10" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:app.config" caret="1744" fromTop="24" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Entities/f:ModelAlfa.edmx" caret="26591" fromTop="20" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:TestPort.cs" caret="0" fromTop="0" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:Program.cs" caret="73" fromTop="4" />
@@ -28,10 +27,9 @@
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:FloorsCollection.cs" caret="439" fromTop="0" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Room.cs" caret="3527" fromTop="24" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="13274" fromTop="27" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:app.config" caret="3300" fromTop="6" />
     </RecentFiles>
     <RecentEdits>
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="5261" fromTop="31" />
-      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="4392" fromTop="12" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="7902" fromTop="6" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:NLog.config" caret="642" fromTop="14" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:NLog.config" caret="449" fromTop="9" />
@@ -60,6 +58,8 @@
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="11244" fromTop="25" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Services/f:ClientService.cs" caret="11487" fromTop="22" />
       <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/d:Models/f:Floor.cs" caret="12796" fromTop="12" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:app.config" caret="2858" fromTop="22" />
+      <File id="C59D5D2F-A648-4576-BB7B-4ACBA97659A0/f:app.config" caret="3312" fromTop="6" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
