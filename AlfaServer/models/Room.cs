@@ -45,6 +45,8 @@ namespace AlfaServer.Models
             LastKeyNumber = keyNumber;
             _onLine = onLine;
             _isProtected = isProtected;
+
+            _keyRead = false;
         }
 
         private Logger _logger = LogManager.GetCurrentClassLogger();
@@ -178,6 +180,17 @@ namespace AlfaServer.Models
 
                 return false;
             }
+        }
+
+        private bool _keyRead;
+
+        /// <summary>
+        /// Ключ был считан при последнем опросе гиркона
+        /// </summary>
+        public bool KeyRead
+        {
+            get { return _keyRead; }
+            set { _keyRead = value; }
         }
 
         /// <summary>

@@ -46,7 +46,7 @@ namespace AlfaServer.Services
 //            _logger.Info("service: unset key cell {0}, controller {1}, port = {2}", number, controllerNumber, portName);
 
             FloorsCollection floorsCollection = FloorsCollection.GetInstance();
-            //todo помечать в базе время удаления
+
             foreach (Floor floorsCollectionItem in floorsCollection)
             {
 
@@ -281,6 +281,92 @@ namespace AlfaServer.Services
                     return;
                 }
             }
+        }
+
+        public bool SetKeyMass(byte[] key, string portName, byte[] controllerNumbers, byte cellNumber, string name, byte type, DateTime endDate)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            FloorsCollection floorsCollection = FloorsCollection.GetInstance();
+
+            bool isSetAll = true;
+
+            foreach (Floor floorsCollectionItem in floorsCollection)
+            {
+                if (floorsCollectionItem.PortName == portName)
+                {
+                    foreach (byte controllerNumber in controllerNumbers)
+                    {
+                        int countErrorRequest = 0;
+                        for (int i = 0; i < Configuration.GetInstance().CountSetKeyRequest; i++)
+                        {
+                            floorsCollectionItem.SetKey(controllerNumber, cellNumber, key, name, type, endDate);
+                            if (floorsCollectionItem.CheckingExistenceKey(controllerNumber, key))
+                            {
+                                break;
+                            }
+
+                            countErrorRequest++;
+                            if (countErrorRequest == Configuration.GetInstance().CountSetKeyRequest)
+                            {
+                                isSetAll = false;
+                            }
+                            
+                        }
+                    }
+
+                    break;
+                }
+            }
+
+
+            _logger.Info("service: mass set key cell {0}, port = {1} set all without errors = {2} time = {3}",
+                cellNumber, portName, isSetAll, stopwatch.Elapsed);
+
+            return isSetAll;
+        }
+
+        public bool UnsetKeyMass(string portName, byte[] controllerNumbers, byte cellNumber)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            FloorsCollection floorsCollection = FloorsCollection.GetInstance();
+
+            bool isSetAll = true;
+
+            foreach (Floor floorsCollectionItem in floorsCollection)
+            {
+                if (floorsCollectionItem.PortName == portName)
+                {
+                    foreach (byte controllerNumber in controllerNumbers)
+                    {
+                        int countErrorRequest = 0;
+                        for (int i = 0; i < Configuration.GetInstance().CountSetKeyRequest; i++)
+                        {
+                            
+                            if (floorsCollectionItem.UnsetKey(controllerNumber, cellNumber))
+                            {
+                                break;
+                            }
+
+                            countErrorRequest++;
+                            if (countErrorRequest == Configuration.GetInstance().CountSetKeyRequest)
+                            {
+                                isSetAll = false;
+                            }
+
+                        }
+                    }
+
+                    break;
+                }
+            }
+
+
+            _logger.Info("service: mass unset key cell {0}, port = {1} unset all without errors = {2} time = {3}",
+                cellNumber, portName, isSetAll, stopwatch.Elapsed);
+
+            return isSetAll;
         }
 
         public void SetAllRoomToProtect(string portName, bool isProtected)

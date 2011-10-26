@@ -71,7 +71,11 @@ namespace AlfaServer.Models
 
         public void AddRoom(byte controllerNumber, bool onLine, bool isProtected, long roomId)
         {
-            Dictionary<byte, ReadingKey> keys = this.GetAllKeys(controllerNumber);
+//            Dictionary<byte, ReadingKey> keys = this.GetAllKeys(controllerNumber);
+            Dictionary<byte, ReadingKey> keys = null;
+
+            AlfaEntities alfaEntities = new AlfaEntities();
+
             this.Add(new Room(controllerNumber, keys, onLine, isProtected, roomId, 12));
             _logger.Info("room id = {0} add", roomId);
         }
@@ -124,8 +128,8 @@ namespace AlfaServer.Models
             int countPoll = 0;
             
             DateTime oldDate = DateTime.Now;
-            //todo заменить на 10 минут
-            TimeSpan timeSpan = new TimeSpan(0, 1, 0);
+
+            TimeSpan timeSpan = new TimeSpan(0, 10, 0);
             bool checkTime = true;
 
             while (true)
@@ -305,18 +309,28 @@ namespace AlfaServer.Models
                 {
                     try
                     {
-                        bool alarm;
-                        if (state[1] > 13)
+                        bool alarm = false;
+
+                        if (!room.KeyRead)
                         {
-                            alarm = true;
+                            byte[] key = GetLastKey(room.ControllerNumber);
+
+                            _logger.Info("key lenght {0}", BitConverter.ToString(key));
+                            if (BitConverter.ToString(key) == "00-00-00-00-00")
+                            {
+                                alarm = true;
+                            }
+
+                            room.KeyRead = true;
+                            ClientServiceCallback.AlertGerkon(room.RoomId, state[1], alarm);
+                            _logger.Info("оповещение отправлено, дверь была открыта ключем номер {0} alarm = {1} keyRead = {2}", state[1], alarm, room.KeyRead);
                         }
                         else
                         {
-                            alarm = false;
+                            room.KeyRead = false;
                         }
 
-                        ClientServiceCallback.AlertGerkon(room.RoomId, state[1], alarm);
-                        _logger.Info("оповещение отправлено");
+
                     }
                     catch (Exception)
                     {
@@ -747,6 +761,12 @@ namespace AlfaServer.Models
                 {
                     room.IsProtected = isProtected;
 
+                    if (isProtected)
+                    {
+                        GetLastKey(controllerNumber);
+                        room.KeyRead = true;
+                    }
+
                     var currentRoom =
                         (from rooms in _alfaEntities.Rooms
                          where rooms.RoomId == room.RoomId
@@ -782,7 +802,6 @@ namespace AlfaServer.Models
 
         public bool SetLight(byte controllerNumber, bool lightOn)
         {
-            //todo уточнить управляющий бит света
             byte state;
 
             if (lightOn)

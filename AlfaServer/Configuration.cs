@@ -75,5 +75,13 @@ namespace AlfaServer
         {
             get { return 50; }
         }
+
+        /// <summary>
+        /// количество попыток установки ключа
+        /// </summary>
+        public int CountSetKeyRequest
+        {
+            get { return 3; }
+        }
     }
 }

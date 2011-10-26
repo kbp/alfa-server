@@ -56,5 +56,11 @@ namespace AlfaServer.Services
 
         [OperationContract(IsOneWay = true)]
         void SetAllRoomLight(string portName, bool lightOn);
+
+        [OperationContract]
+        bool SetKeyMass(byte[] key, string portName, byte[] controllerNumbers, byte cellNumber, string name, byte type, DateTime endDate);
+
+        [OperationContract]
+        bool UnsetKeyMass(string portName, byte[] controllerNumbers, byte cellNumber);
     }
 }
